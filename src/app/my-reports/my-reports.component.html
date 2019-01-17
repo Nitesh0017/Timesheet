@@ -1,0 +1,210 @@
+<div class="screen">
+    <label class="reports">My Reports</label>
+    <div class="chart">
+        <div class="chart1" *ngIf="chart1">
+            <label class="charts-name">employee at projects</label>
+            <div style="display: block;">
+            <mat-form-field *ngIf="IsManager">
+                <mat-select placeholder="Employee" name="selectEmployee" [(ngModel)]="selectEmployee">
+                    <mat-option *ngFor="let team of retrieveTeam" (click)="selectedEmployeeTimesheet()" [value]="team.empId">
+                        {{team.empName}}
+                    </mat-option>
+                    <mat-option (click)="selectedEmployeeTimesheet()" [value]="this.selectEmployee">
+                        {{this.employeeName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field *ngIf="IsManager">
+                <mat-select placeholder="Month" name="selectMonth" [(ngModel)]="selectMonth">
+                    <mat-option value='1' (click)="selectedEmployeeTimesheet()">Jan</mat-option>
+                    <mat-option value='2' (click)="selectedEmployeeTimesheet()">Feb</mat-option>
+                    <mat-option value='3' (click)="selectedEmployeeTimesheet()">Mar</mat-option>
+                    <mat-option value='4' (click)="selectedEmployeeTimesheet()">Apr</mat-option>
+                    <mat-option value='5' (click)="selectedEmployeeTimesheet()">May</mat-option>
+                    <mat-option value='6' (click)="selectedEmployeeTimesheet()">Jun</mat-option>
+                    <mat-option value='7' (click)="selectedEmployeeTimesheet()">Jul</mat-option>
+                    <mat-option value='8' (click)="selectedEmployeeTimesheet()">Aug</mat-option>
+                    <mat-option value='9' (click)="selectedEmployeeTimesheet()">Sept</mat-option>
+                    <mat-option value='10' (click)="selectedEmployeeTimesheet()">Oct</mat-option>
+                    <mat-option value='11' (click)="selectedEmployeeTimesheet()">Nov</mat-option>
+                    <mat-option value='12' (click)="selectedEmployeeTimesheet()">Dec</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field *ngIf="IsManager">
+                    <mat-select placeholder="Year" name="selectYear" [(ngModel)]="selectYear">
+                            <mat-option value='2019' (click)="selectedProjectTeamTimesheet()">2019</mat-option>
+                            <mat-option value='2018' (click)="selectedProjectTeamTimesheet()">2018</mat-option>
+                            <mat-option value='2017' (click)="selectedProjectTeamTimesheet()">2017</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                </div>
+            <mat-form-field *ngIf="!IsManager">
+                <mat-select placeholder="Month" name="selectMonth" [(ngModel)]="selectMonth">
+                    <mat-option value='1' (click)="selectedEmployeeTimesheet()">Jan</mat-option>
+                    <mat-option value='2' (click)="selectedEmployeeTimesheet()">Feb</mat-option>
+                    <mat-option value='3' (click)="selectedEmployeeTimesheet()">Mar</mat-option>
+                    <mat-option value='4' (click)="selectedEmployeeTimesheet()">Apr</mat-option>
+                    <mat-option value='5' (click)="selectedEmployeeTimesheet()">May</mat-option>
+                    <mat-option value='6' (click)="selectedEmployeeTimesheet()">Jun</mat-option>
+                    <mat-option value='7' (click)="selectedEmployeeTimesheet()">Jul</mat-option>
+                    <mat-option value='8' (click)="selectedEmployeeTimesheet()">Aug</mat-option>
+                    <mat-option value='9' (click)="selectedEmployeeTimesheet()">Sept</mat-option>
+                    <mat-option value='10' (click)="selectedEmployeeTimesheet()">Oct</mat-option>
+                    <mat-option value='11' (click)="selectedEmployeeTimesheet()">Nov</mat-option>
+                    <mat-option value='12' (click)="selectedEmployeeTimesheet()">Dec</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field *ngIf="!IsManager">
+                    <mat-select placeholder="Year" name="selectYear" [(ngModel)]="selectYear">
+                            <mat-option value='2019' (click)="selectedEmployeeTimesheet()">2019</mat-option>
+                            <mat-option value='2018' (click)="selectedEmployeeTimesheet()">2018</mat-option>
+                            <mat-option value='2017' (click)="selectedEmployeeTimesheet()">2017</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                 
+            <canvas baseChart [chartType]="'pie'" [datasets]="pieChartData" [labels]="pieChartLabels" [options]="pieChartOptions" [colors]="pieChartColor">
+            </canvas>
+            <div class="deleted1Msg" *ngIf="chart1Msg">
+                    <p class="loginMessage">{{chart1Message}}</p>
+           </div>
+        </div>
+        <div class="chart2" *ngIf="IsManager && chart2">
+            <label class="charts-name">
+                employees at project
+            </label>
+            <div style="display: block;">
+            <mat-form-field>
+                <mat-select placeholder="Project" name="selectProject" [(ngModel)]="selectProject">
+                    <mat-option *ngFor="let project of retrieveProjects" (click)="selectedProjectTeamTimesheet()"
+                        [value]="project.empName">
+                        {{project.emailId}}
+                    </mat-option>
+                    <mat-option (click)="selectedProjectTeamTimesheet()"
+                        value="Other">
+                        Other
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field *ngIf="IsManager">
+                <mat-select placeholder="Month" name="selectMonth1" [(ngModel)]="selectMonth1">
+                    <mat-option value='1' (click)="selectedProjectTeamTimesheet()">Jan</mat-option>
+                    <mat-option value='2' (click)="selectedProjectTeamTimesheet()">Feb</mat-option>
+                    <mat-option value='3' (click)="selectedProjectTeamTimesheet()">Mar</mat-option>
+                    <mat-option value='4' (click)="selectedProjectTeamTimesheet()">Apr</mat-option>
+                    <mat-option value='5' (click)="selectedProjectTeamTimesheet()">May</mat-option>
+                    <mat-option value='6' (click)="selectedProjectTeamTimesheet()">Jun</mat-option>
+                    <mat-option value='7' (click)="selectedProjectTeamTimesheet()">Jul</mat-option>
+                    <mat-option value='8' (click)="selectedProjectTeamTimesheet()">Aug</mat-option>
+                    <mat-option value='9' (click)="selectedProjectTeamTimesheet()">Sept</mat-option>
+                    <mat-option value='10' (click)="selectedProjectTeamTimesheet()">Oct</mat-option>
+                    <mat-option value='11' (click)="selectedProjectTeamTimesheet()">Nov</mat-option>
+                    <mat-option value='12' (click)="selectedProjectTeamTimesheet()">Dec</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field *ngIf="IsManager">
+                    <mat-select placeholder="Year" name="selectYear1" [(ngModel)]="selectYear1">
+                        <mat-option value='2019' (click)="selectedProjectTeamTimesheet()">2019</mat-option>
+                        <mat-option value='2018' (click)="selectedProjectTeamTimesheet()">2018</mat-option>
+                        <mat-option value='2017' (click)="selectedProjectTeamTimesheet()">2017</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>  
+              
+            <canvas baseChart [chartType]="'bar'" [datasets]="pieChartData1" [labels]="pieChartLabels1" [options]="pieChartOptions1"
+                [colors]="pieChartColor1">
+            </canvas>
+            <div class="deleted1Msg" *ngIf="chart2Msg">
+                    <p class="loginMessage">{{chart2Message}}</p>
+           </div> 
+        </div>
+        <div class="chart2" *ngIf="(!IsManager) && chart3">
+                <label class="charts-name">
+                    employees at office
+                </label>
+                <div style="display: block;">
+                <mat-form-field *ngIf="!IsManager">
+                    <mat-select placeholder="Month" name="selectMonth3" [(ngModel)]="selectMonth3">
+                        <mat-option value='1' (click)="selectedEmployeeTimesheetMonthly()">Jan</mat-option>
+                        <mat-option value='2' (click)="selectedEmployeeTimesheetMonthly()">Feb</mat-option>
+                        <mat-option value='3' (click)="selectedEmployeeTimesheetMonthly()">Mar</mat-option>
+                        <mat-option value='4' (click)="selectedEmployeeTimesheetMonthly()">Apr</mat-option>
+                        <mat-option value='5' (click)="selectedEmployeeTimesheetMonthly()">May</mat-option>
+                        <mat-option value='6' (click)="selectedEmployeeTimesheetMonthly()">Jun</mat-option>
+                        <mat-option value='7' (click)="selectedEmployeeTimesheetMonthly()">Jul</mat-option>
+                        <mat-option value='8' (click)="selectedEmployeeTimesheetMonthly()">Aug</mat-option>
+                        <mat-option value='9' (click)="selectedEmployeeTimesheetMonthly()">Sept</mat-option>
+                        <mat-option value='10' (click)="selectedEmployeeTimesheetMonthly()">Oct</mat-option>
+                        <mat-option value='11' (click)="selectedEmployeeTimesheetMonthly()">Nov</mat-option>
+                        <mat-option value='12' (click)="selectedEmployeeTimesheetMonthly()">Dec</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="!IsManager">
+                        <mat-select placeholder="Year" name="selectYear3" [(ngModel)]="selectYear3">
+                            <mat-option value='2019' (click)="selectedEmployeeTimesheetMonthly()">2019</mat-option>
+                            <mat-option value='2018' (click)="selectedEmployeeTimesheetMonthly()">2018</mat-option>
+                            <mat-option value='2017' (click)="selectedEmployeeTimesheetMonthly()">2017</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div> 
+                  
+                <canvas baseChart [chartType]="'bar'" [datasets]="pieChartData3" [labels]="pieChartLabels3"  [options]="pieChartOptions3"
+                    [colors]="pieChartColor3">
+                </canvas>
+                <div class="deleted1Msg" *ngIf="chart3Msg">
+                        <p class="loginMessage">{{chart3Message}}</p>
+               </div> 
+            </div>
+    </div>
+    <div >
+            <div class="viewtimesheet" >
+        <label class="history">My History</label>
+            <mat-form-field>
+                        <mat-select placeholder="Select Year" name="selectYear2" [(ngModel)]="selectYear2">
+                                <mat-option value='2019' (click)="selectedTimesheetMonthly()">2019</mat-option>
+                                <mat-option value='2018' (click)="selectedTimesheetMonthly()">2018</mat-option>
+                                <mat-option value='2017' (click)="selectedTimesheetMonthly()">2017</mat-option>
+                        </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select placeholder="Select Month" name="selectMonth2" [(ngModel)]="selectMonth2">
+                    <mat-option value='1' (click)="selectedTimesheetMonthly()">Jan</mat-option>
+                    <mat-option value='2' (click)="selectedTimesheetMonthly()">Feb</mat-option>
+                    <mat-option value='3' (click)="selectedTimesheetMonthly()">Mar</mat-option>
+                    <mat-option value='4' (click)="selectedTimesheetMonthly()">Apr</mat-option>
+                    <mat-option value='5' (click)="selectedTimesheetMonthly()">May</mat-option>
+                    <mat-option value='6' (click)="selectedTimesheetMonthly()">Jun</mat-option>
+                    <mat-option value='7' (click)="selectedTimesheetMonthly()">Jul</mat-option>
+                    <mat-option value='8' (click)="selectedTimesheetMonthly()">Aug</mat-option>
+                    <mat-option value='9' (click)="selectedTimesheetMonthly()">Sept</mat-option>
+                    <mat-option value='10' (click)="selectedTimesheetMonthly()">Oct</mat-option>
+                    <mat-option value='11' (click)="selectedTimesheetMonthly()">Nov</mat-option>
+                    <mat-option value='12' (click)="selectedTimesheetMonthly()">Dec</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <table class="tblTimesheet" *ngIf="Timesheet">
+                <tr>
+                    <th class="tblRow">Time Duration</th>
+                    <th class="tblRow">Timesheet Status</th>
+                    <th class="tblRow">Work Effort Hours</th>
+                    <th class="tblRow">Submission Date</th>
+                    <th class="tblRow" colspan="2">Action</th>
+                </tr>
+                <tr *ngFor="let timesheet of httpdata; let i = index" [class.active]="i == selectedRow">
+                    <td class="tblRow">{{timesheet.timesheetWeek}}</td>
+                    <td 
+                    [ngClass]="{'tblRowg': timesheet.timesheetStatus == 'Approved','tblRowy': timesheet.timesheetStatus == 'Submitted','tblRow': timesheet.timesheetStatus == 'Saved','tblRowr': timesheet.timesheetStatus == 'Rejected'}"
+                    >{{timesheet.timesheetStatus}}</td>
+                    <td class="tblRow">{{timesheet.effortHours}}</td>
+                    <td class="tblRow">{{timesheet.submissionTimesheetDate.split("T")[0] | date:format}}</td>
+                    <td class="tblRow">
+                        <img src="/assets/images/edit_action.png" (click)="onEditTimesheet(timesheet)">
+                        <img src="/assets/images/delete_action.png" (click)="onDeleteTimesheet(timesheet)">
+                    </td>
+                </tr>
+            </table>
+            <div class="deletedMsg" *ngIf="deletedTimesheet">
+                    <p class="loginMessage">{{deletedMessage}}</p>
+           </div>
+        </div>
+    </div>
+</div>

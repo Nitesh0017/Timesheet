@@ -1,0 +1,158 @@
+.details-timesheet{
+    border: 2px #f2f2f2;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 880px;
+}
+.head{
+    font-weight: bold;
+    font-style: normal;
+    font-size: 24px;
+    margin-left: 5%;
+    float: left;
+    margin-bottom: 10px;
+}
+.personaldetails{
+    background-color: dodgerblue;
+    width: 90%;
+    margin-left: 5%;
+    margin-top:2%;
+}
+.selectEmployee{
+    margin-right: 5%;
+    float: right;
+    margin-bottom: 10px;
+}
+
+.row1{
+    float: left;
+    width: 100%;
+    color: darkgrey;
+    text-align: right;
+    font-size: 14px;
+    height: 12px;
+}
+.row2{
+    float: right;
+    width: 100%;
+    color: #f2f2f2;
+    text-align: left;
+    font-size: 14px;
+    height: 14px;
+}
+.upSection{
+    margin-top: 3%;
+    margin-bottom: 10px;
+    display: block;
+}
+#reviewedMsg{
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    color: red;
+    display: block;
+}
+.viewtimesheet{
+    width:90%;
+    height:50%;
+    text-align: center;
+    background-color:white;
+    margin-left: 5%;
+    margin-right: 0%;
+    margin-bottom:1%;
+}
+.background{
+    width:100%;
+    background-color:white;
+}
+.tblTimesheet{
+  
+    margin: auto;
+    border-collapse: collapse;
+    width: 95%;
+    margin-top:2%;
+    color:black;
+    margin-bottom: 2%;
+}
+.tblRow{
+    border: 2px solid  rgb(102, 97, 97);
+    border-left-style: none;
+    border-right-style: none;
+    width: 20%;
+    text-align: center;
+}
+.tblRowg{
+    border: 2px solid chocolate;
+    border: 2px solid  rgb(102, 97, 97);
+    border-left-style: none;
+    border-right-style: none;
+    width: 20%;
+    background-color: green;
+    background-position-x: 20%;
+    background-position-y: 80%;
+    text-align: center;
+}
+.tblRowy{
+    border: 2px solid chocolate;
+    border: 2px solid  rgb(102, 97, 97);
+    border-left-style: none;
+    border-right-style: none;
+    width: 20%;
+    background-color:yellow;
+    background-position-x: 20%;
+    background-position-y: 80%;
+    text-align: center;
+}
+.tblRowr{
+    border: 2px solid chocolate;
+    border: 2px solid  rgb(102, 97, 97);
+    border-left-style: none;
+    border-right-style: none;
+    width: 20%;
+    background-color: rebeccapurple;
+    background-position-x: 20%;
+    background-position-y: 80%;
+    text-align: center;
+}
+.tblRow1{
+    border: 2px solid  rgb(102, 97, 97);
+    border-left-style: none;
+    border-right-style: none;
+    width: 10%; 
+    text-align: center;
+}
+#buttonAction{
+    float: right;
+    margin-right: 10%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+#buttonSubmit{
+    float: right;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.loginMessage {
+    text-align: center;
+    color: red;
+}
+.selector{
+    margin-left: 45%;
+    margin-right: 5%;
+    width: 50%;
+    float: right;
+}
+mat-form-field{
+    float:right;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 40%;
+}
+.selectEmployee mat-form-field{
+    float:right;
+    margin-right: 2%;
+    margin-left: 2%;
+    width: 100%;
+}

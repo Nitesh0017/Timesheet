@@ -1,0 +1,10 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+  }
+  
+  

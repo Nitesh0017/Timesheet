@@ -1,0 +1,134 @@
+.loginMessage {
+    text-align: center;
+    color: red;
+}
+.details-timesheet{
+    border: 2px #f2f2f2;
+    width: 90%;
+    height:880px;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.head{
+    font-weight: bold;
+    font-style: normal;
+    font-size: 24px;
+    margin-left: 5%;
+}
+.row1{
+    float: left;
+    width: 100%;
+    color: darkgrey;
+    text-align: right;
+    font-size: 14px;
+    height: 12px;
+}
+.row2{
+    float: right;
+    width: 100%;
+    color: #f2f2f2;
+    text-align: left;
+    font-size: 14px;
+    height: 14px;
+}
+.personaldetails{
+    background-color: dodgerblue;
+    width: 90%;
+    margin-left: 5%;
+    
+}
+#buttonCancel{
+    float: right;
+    margin-right: 3%;
+    /* background-color: #f2f2f2; */
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background:url(/assets/images/cancel_ac.png);
+    background-position: 20px 8px;
+    background-repeat: no-repeat;
+    width: 13%;
+}
+#buttonDeleteRow{
+    float: right;
+    margin-right: 2%;
+    /* background-color: #f2f2f2; */
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background:#0974F4 url(/assets/images/cancel_ac.png);
+    background-position: 10px 8px;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+#buttonClear{
+    float: right;
+    margin-right: 3%;
+    /* background-color: #f2f2f2; */
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 10%;
+    background:url(/assets/images/clear_ac.png);
+    background-position: 20px 8px;
+    background-repeat: no-repeat;
+}
+#buttonSave{
+    float: right;
+    margin-right: 3%;
+    /* background-color: #f2f2f2; */
+    margin-top: 1%;
+    margin-bottom: 1%;
+    width: 10%;
+    background:url(/assets/images/save_ac.png);
+    background-position: 20px 8px;
+    background-repeat: no-repeat;
+}
+#buttonSubmit{
+    float: right;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    /* background: url(/assets/images/username.png) no-repeat scroll; */
+    /* padding: 8px 8px 8px 14px; */
+    /* font-family: Arial, Verdana;    */
+    background: #0974F4 url(/assets/images/submit.png);
+    background-position: 20px 8px;
+    background-repeat: no-repeat;
+    width: 13%;
+}
+#buttonAdd{
+    float: left;
+    margin-left: 6%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    /* background: url(/assets/images/username.png) no-repeat scroll; */
+    /* padding: 8px 8px 8px 14px; */
+    /* font-family: Arial, Verdana;    */
+    background: #0974F4 url(/assets/images/new_entry.png);
+    background-position: 20px 5px;
+    background-repeat: no-repeat;
+    border-style: none;
+    width: 13%;
+}
+.tblRow{
+    width: 80%;
+    height: 80px;
+    background-color: #f2f2f2;
+    margin-top: 5px;
+}
+.fillTimesheet{
+    width:90%; 
+    text-align:center;
+     margin-left: 5%; 
+     margin-right:2%
+}
+.fillTimesheet1{
+    width:90%; 
+    text-align:center;
+     margin-left: 5%; 
+     margin-right:5%
+}
+.column1{
+    width:10%;
+}
+.column2{
+    width: 20%;
+}

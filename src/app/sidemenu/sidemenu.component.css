@@ -1,0 +1,110 @@
+.pms-section{
+    text-align: center;
+    width: 60%;
+    margin-left: 12%;
+}
+.btnFirst{
+    border-bottom-left-radius: 25%;
+    border-top-left-radius: 25%;
+    border-left-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-right-style: none;
+    background-color: white;
+    width: 40%;
+    height: 50px;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+}
+.btnMid{
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: none;
+    background-color: white;
+    width: 40%;
+    height: 50px;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+}
+.btnMid2{
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: none;
+    background-image: linear-gradient(to right,#66ceb6,#118cfe);
+    width: 40%;
+    height: 50px;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+}
+.btnLast{
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 25%;
+    border-right-style: solid;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    background-color: white;
+    width: 40%;
+    height: 50px;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+}
+.empName{
+    font-size: 13px;
+    color: black;
+    margin-left: 50%;
+}
+.logout{
+    margin-left: 0%;
+    margin-right: 2%;
+    float: right;
+}
+mat-sidenav {
+    background-color:rgb(2, 2, 43);
+}
+.itemImg{
+    height: 50px;
+    width: 50px;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.itemText{
+    height:50px;
+    width: 150px;
+    text-align: center;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+mat-sidenav-content{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.tab{
+    height: 250px;
+    width: 250px;
+    color: #ffffff;
+    display:block;
+}
+/* .tab1{
+    height: 250px;
+    width: 100%;
+    color: #ffffff;
+    display:block;
+    background-color: red;
+} */
+.loginMessage {
+    text-align: center;
+    color: red;
+}

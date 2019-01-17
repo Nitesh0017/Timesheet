@@ -1,0 +1,183 @@
+<div class="details-timesheet">
+    <div class="background">
+    <div class="upSection">
+    <p class="head">View Timesheet</p>
+    </div>
+    <div class="personaldetails">
+        <div class="container">
+            <div class="row" *ngFor="let detail of employeeDetails">
+                <div class="col-md-3">
+                    <label class="row1">Employee Name : </label>
+                    <br>
+
+                    <label class="row1">Employee Id : </label>
+                    <br>
+
+                    <label class="row1">Employee Grade : </label>
+                    <br>
+
+                    <label class="row1">Employee Designation : </label>
+                    <br>
+
+                    <label class="row1">Location : </label>
+                    <br>
+
+                </div>
+                <div class="col-md-3">
+                    <label class="row2">{{detail.empName}}</label>
+                    <br>
+                    <label class="row2">{{detail.empId}}</label>
+                    <br>
+                    <label class="row2">{{detail.empGrade}}</label>
+                    <br>
+                    <label class="row2">{{detail.designation}}</label>
+                    <br>
+                    <label class="row2">{{detail.location}}</label>
+                    <br>
+                </div>
+                <div class="col-md-3">
+                    <label class="row1">Employee Email : </label>
+                    <br>
+
+                    <label class="row1">Employee Contact : </label>
+                    <br>
+
+                    <label class="row1">Reporting Manager Id : </label>
+                    <br>
+
+                    <label class="row1">Employee Department : </label>
+                    <br>
+
+                    <label class="row1">Trianz Experience : </label>
+                    <br>
+
+                </div>
+                <div class="col-md-3">
+                    <label class="row2">{{detail.emailId}}</label>
+                    <br>
+                    <label class="row2">{{detail.empContact}}</label>
+                    <br>
+                    <label class="row2">{{detail.rmId}}</label>
+                    <br>
+                    <label class="row2">{{detail.department}}</label>
+                    <br>
+                    <label class="row2">{{detail.trianzExp}}</label>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="selective">
+        <label class="history">My History</label>
+        <mat-form-field>
+            <mat-select placeholder="Select Month" name="selectMonth2" [(ngModel)]="selectMonth2">
+                <mat-option value='1' (click)="selectedTimesheetMonthly()">Jan</mat-option>
+                <mat-option value='2' (click)="selectedTimesheetMonthly()">Feb</mat-option>
+                <mat-option value='3' (click)="selectedTimesheetMonthly()">Mar</mat-option>
+                <mat-option value='4' (click)="selectedTimesheetMonthly()">Apr</mat-option>
+                <mat-option value='5' (click)="selectedTimesheetMonthly()">May</mat-option>
+                <mat-option value='6' (click)="selectedTimesheetMonthly()">Jun</mat-option>
+                <mat-option value='7' (click)="selectedTimesheetMonthly()">Jul</mat-option>
+                <mat-option value='8' (click)="selectedTimesheetMonthly()">Aug</mat-option>
+                <mat-option value='9' (click)="selectedTimesheetMonthly()">Sept</mat-option>
+                <mat-option value='10' (click)="selectedTimesheetMonthly()">Oct</mat-option>
+                <mat-option value='11' (click)="selectedTimesheetMonthly()">Nov</mat-option>
+                <mat-option value='12' (click)="selectedTimesheetMonthly()">Dec</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+                <mat-select placeholder="Select Year" name="selectYear2" [(ngModel)]="selectYear2">
+                        <mat-option value='2019' (click)="selectedTimesheetMonthly()">2019</mat-option>
+                        <mat-option value='2018' (click)="selectedTimesheetMonthly()">2018</mat-option>
+                        <mat-option value='2017' (click)="selectedTimesheetMonthly()">2017</mat-option>
+                </mat-select>
+    </mat-form-field>
+    </div>
+    <div *ngIf="deletedTimesheet" class="viewTimesheetMessage">
+                        <p class="loginMessage" >{{deletedMessage}}</p>
+     </div>               
+        <div *ngIf="EmployeeTimesheet">
+        <table class="tblTimesheet">
+            <tr>
+                <th class="tblRow">Time Duration</th>
+                <th class="tblRow">Timesheet Status</th>
+                <th class="tblRow">Work Effort Hours</th>
+                <th class="tblRow">Submission Date</th>
+                <th class="tblRow" colspan="2">Action</th>
+            </tr>
+            <tr *ngFor="let timesheet of httpdata; let i = index" [class.active]="i == selectedRow">
+                <td class="tblRow">{{timesheet.timesheetWeek}}</td>
+                <td 
+                [ngClass]="{'tblRowg': timesheet.timesheetStatus == 'Approved','tblRowy': timesheet.timesheetStatus == 'Submitted','tblRow': timesheet.timesheetStatus == 'Saved','tblRowr': timesheet.timesheetStatus == 'Rejected'}"
+                >{{timesheet.timesheetStatus}}</td>
+                <td class="tblRow">{{timesheet.effortHours}}</td>
+                <td class="tblRow">{{timesheet.submissionTimesheetDate.split("T")[0]}}</td>
+                <td class="tblRow">
+                        <img src="/assets/images/edit_action.png" (click)="reviewEmployeeTimesheet(timesheet)">
+                </td>
+            </tr>
+        </table>
+        </div>
+<div *ngIf="varSelectedEmployeeTimesheet">
+        <div class="viewtimesheet">
+            <table class="tblTimesheet1">
+                <thead>
+                    <tr style="border-bottom-style: none;">
+                        <th class="tblRow"></th>
+                        <th class="tblRow">{{" Monday "}}</th>
+                        <th class="tblRow">{{" Tuesday "}}</th>
+                        <th class="tblRow">{{" Wednesday "}}</th>
+                        <th class="tblRow">{{" Thursday "}}</th>
+                        <th class="tblRow">{{" Friday "}}</th>
+                        <th class="tblRow">{{" Saturday "}}</th>
+                        <th class="tblRow">{{" Sunday "}}</th>
+                        <th class="tblRow2"></th>
+                    </tr>
+                    <tr style="border-top-style: none;" *ngFor="let retrieveDates of RetrieveTimesheet">
+                        <th class="tblRow">Project</th>
+                        <th class="tblRow">{{retrieveDates.timesheet1Date| date:format}}</th>
+                        <th class="tblRow">{{retrieveDates.timesheet2Date| date:format}}</th>
+                        <th class="tblRow">{{retrieveDates.timesheet3Date| date:format}}</th>
+                        <th class="tblRow">{{retrieveDates.timesheet4Date| date:format}}</th>
+                        <th class="tblRow">{{retrieveDates.timesheet5Date| date:format}}</th>
+                        <th class="tblRow">{{retrieveDates.timesheet6Date| date:format}}</th>
+                        <th class="tblRow">{{retrieveDates.timesheet7Date| date:format}}</th>
+                        <th class="tblRow2">Work Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let retrieveEffort of RetrieveEffort">
+                        <th class="tblRow">
+                            {{retrieveEffort.projectId}}
+                        </th>
+                        <td class="tblRow">
+                            {{retrieveEffort.timesheet1DateEffort}}
+                        </td>
+                        <td class="tblRow">
+                            {{retrieveEffort.timesheet2DateEffort}}
+                        </td>
+                        <td class="tblRow">
+                            {{retrieveEffort.timesheet3DateEffort}}
+                        </td>
+                        <td class="tblRow">
+                            {{retrieveEffort.timesheet4DateEffort}}
+                        </td>
+                        <td class="tblRow">
+                            {{retrieveEffort.timesheet5DateEffort}}
+                        </td>
+                        <td class="tblRow">
+                            {{retrieveEffort.timesheet6DateEffort}}
+                        </td>
+                        <td class="tblRow">
+                            {{retrieveEffort.timesheet7DateEffort}}
+                        </td>
+                        <td class="tblRow2">
+                            {{retrieveEffort.taskDescription}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
